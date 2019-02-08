@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Web.Security;
+using System.Data;
+
+
+namespace rinya_app.Account
+{
+    public partial class Obtener_pass : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        private bool ValidateUser(string userName, string passWord)
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            string lookupPassword = null;
+
+            // Buscar nombre de usuario no válido.
+            // el nombre de usuario no debe ser un valor nulo y debe tener entre 1 y 15 caracteres.
+            if ((null == userName) || (0 == userName.Length) || (userName.Length > 15))
+            {
+                System.Diagnostics.Trace.WriteLine("[ValidateUser] Input validation of userName failed.");
+                return false;
+            }
+
+         
+
+            try
+            {
+                // Consultar con el administrador de SQL Server para obtener una conexión apropiada
+                // cadena que se utiliza para conectarse a su SQL Server local.
+                conn = new SqlConnection(@"Data Source=192.168.1.195\sqlserver2008;Initial Catalog=QC600;Persist Security Info=True;User ID=dso;Password=dsodsodsData Source=192.168.1.195\sqlserver2008;Initial Catalog=QC600;Persist Security Info=True;User ID=dso;Password=dsodsodso");
+                conn.Open();
+
+                // Crear SqlCommand para seleccionar un campo de contraseña desde la tabla de usuarios dado el nombre de usuario proporcionado.
+                cmd = new SqlCommand("SELECT [Password]  FROM [QC600].[dbo].[USUARIOS] where [IDUsuario]=@userName", conn);
+                cmd.Parameters.Add("@userName", SqlDbType.VarChar, 25);
+                cmd.Parameters["@userName"].Value = userName;
+
+                // Ejecutar el comando y capturar el campo de contraseña en la cadena lookupPassword.
+                lookupPassword = (string)cmd.ExecuteScalar();
+
+                // Comando de limpieza y objetos de conexión.
+                cmd.Dispose();
+                conn.Dispose();
+            }
+            catch (Exception ex)
+            {
+                // Agregar aquí un control de errores para la depuración.
+                // Este mensaje de error no debería reenviarse al que realiza la llamada.
+                System.Diagnostics.Trace.WriteLine("[ValidateUser] Exception " + ex.Message);
+            }
+
+            // Si no se encuentra la contraseña, devuelve false.
+            if (null == lookupPassword)
+            {
+                // Para más seguridad, puede escribir aquí los intentos de inicio de sesión con error para el registro de eventos.
+                return false;
+            }
+
+            // Comparar lookupPassword e introduzca passWord, usando una comparación que distinga mayúsculas y minúsculas.
+            string SaltKey = "estaeslaclavedeaccesodecomparacion";
+            Byte[] cipherTextBytes = System.Text.Encoding.GetEncoding(1252).GetBytes(lookupPassword);
+            byte[] keyBytes = System.Text.Encoding.ASCII.GetBytes(SaltKey);
+            string rtn = "";
+            int temp2 = 0;
+            string result = "";
+            byte[] cipherTextBytes2 = System.Text.Encoding.GetEncoding(1252).GetBytes(passWord);
+            for (int i = 0; i < cipherTextBytes2.Length; i++)
+            {
+                temp2 = cipherTextBytes2[i] + keyBytes[i];
+                if (temp2 < 0)
+                {
+                    temp2 = temp2 - 255;
+                }
+                result = result + Convert.ToChar(temp2);
+            }
+            int n = cipherTextBytes.Length;
+            int temp = 0;
+            for (int i = 0; i < cipherTextBytes.Length; i++)
+            {
+                temp = cipherTextBytes[i] - keyBytes[i];
+                if (temp < 0)
+                {
+                    temp = temp + 255;
+                }
+                rtn = rtn + Convert.ToChar(temp);
+
+            }
+            return rtn.Equals(passWord); ;
+        }
+    }
+}

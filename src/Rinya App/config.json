@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Rinya_App"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Rinya_App-23e7e2e0-8d09-471d-8ee2-4ba5dc05c8a4;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
