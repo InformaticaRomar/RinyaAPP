@@ -4751,7 +4751,7 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
             DateTime f1 = Convert.ToDateTime(fecha1);
             DateTime f2 = Convert.ToDateTime(fecha2);
             string sql = "";
-            if (f1 < Convert.ToDateTime("01/07/2018") && f2 < Convert.ToDateTime("01/07/2018"))
+            if (f1 < Convert.ToDateTime("01/01/2019") && f2 < Convert.ToDateTime("01/01/2019"))
             {
                 sql = @"SELECT  [DATOS_ORGANOLEPTICO_BK].[ID]
       ,[DATOS_ORGANOLEPTICO_BK].[ARTICULO]
