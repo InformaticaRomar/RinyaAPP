@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -225,6 +226,7 @@
     <Content Include="Calidad\Otros_Controles\Control_Silo.aspx" />
     <Content Include="Calidad\Otros_Controles\Indicador_Temperaturas.aspx" />
     <Content Include="Calidad\Otros_Controles\Indicador_TPP.aspx" />
+    <Content Include="Calidad\Otros_Controles\tpp_tpt.aspx" />
     <Content Include="Calidad\Otros_Controles\WebService_SILO.asmx" />
     <Content Include="Calidad\A_Lote.aspx" />
     <Content Include="Calidad\Trazabilidad\traza.aspx" />
@@ -1513,6 +1515,13 @@
     </Compile>
     <Compile Include="Calidad\Otros_Controles\Indicador_TPP.aspx.designer.cs">
       <DependentUpon>Indicador_TPP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\tpp_tpt.aspx.cs">
+      <DependentUpon>tpp_tpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\tpp_tpt.aspx.designer.cs">
+      <DependentUpon>tpp_tpt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Otros_Controles\WebService_SILO.asmx.cs">
       <DependentUpon>WebService_SILO.asmx</DependentUpon>

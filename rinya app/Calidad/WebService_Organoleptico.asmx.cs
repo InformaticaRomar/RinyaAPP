@@ -847,6 +847,10 @@ select new { C = dataRows1, r == null ? "0" : dataRows2.Field<string>("ARTICULO"
                 case "V3":
                     caracteristica = "131";
                     break;
+                case "Espesor":
+                    caracteristica = "132";
+                    break;
+                //Espesor
 
                 default:
                     caracteristica = columna;
@@ -1227,7 +1231,11 @@ select new { C = dataRows1, r == null ? "0" : dataRows2.Field<string>("ARTICULO"
                 case "131":
                     columna = "V3";
                     break;
-              
+                case "132":
+                    columna = "Espesor";
+                    break;
+
+
 
             }
             return columna;
@@ -2951,6 +2959,19 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                     VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",131," + datos.V3.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
                 con.sql_update(sql);
             }
+
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.Espesor, out Datos_actuales);
+            double.TryParse(datos_antiguo.Espesor, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+                    VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",132," + datos.Espesor.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+
+            
             return false;
         }
         
@@ -3684,6 +3705,12 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                 sql = "update [DATOS_ORGANOLEPTICO] set [V3]='" + datos.V3 + "' where [ID_LOTE]=" + datos.ID_LOTE;
                 con.sql_update(sql);
             }
+            if (datos.Espesor.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [Espesor]='" + datos.Espesor + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            
             if (datos.ID_ESTADO.Length > 0)
             {
                 int.TryParse(Estado, out EstadoA);
@@ -4243,7 +4270,8 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V1.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V2.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V3.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
-
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Espesor.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                
                 sb.Append("\"<img class='image-details' src='content/details_open.png' runat='server' height='16' width='16' alt='View Details'/>\"");
                 sb.Append("]");
                 hasMoreRecords = true;
@@ -4896,6 +4924,7 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
 , null as V1
 , null as V2
 , null as V3
+,null as Espesor
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO_BK]
 
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO_BK].ARTICULO 
@@ -5060,6 +5089,7 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
 ,V1
 ,V2
 ,V3
+,Espesor
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5247,7 +5277,8 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                         Prot_box = lin[149].ToString(),
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
-                        V3 = lin[152].ToString()
+                        V3 = lin[152].ToString(),
+                        Espesor= lin[153].ToString()
                     };
                     lista_datos.Add(linea);
                 }
@@ -5398,6 +5429,7 @@ bloom,CC_obli,textu_tras_tunel
 ,V1 
 ,V2
 ,V3
+,Espesor
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5569,7 +5601,8 @@ inner join sscc_con on idlote=ID_LOTE
                         Prot_box = lin[149].ToString(),
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
-                        V3 = lin[152].ToString()
+                        V3 = lin[152].ToString(),
+                        Espesor = lin [153].ToString()
                     };
                     lista_datos.Add(linea);
                 }
@@ -5721,6 +5754,7 @@ CATA_COMITE
 ,V1
 ,V2
 ,V3
+,Espesor
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5891,7 +5925,8 @@ inner join sscc_con on idlote=ID_LOTE
                         Prot_box = lin[149].ToString(),
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
-                        V3 = lin[152].ToString()
+                        V3 = lin[152].ToString(),
+                        Espesor= lin[153].ToString()
                     };
                     lista_datos.Add(linea);
                 }
@@ -6046,6 +6081,7 @@ Den
 ,V1
 ,V2
 ,V3
+,Espesor
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -6217,7 +6253,8 @@ WHERE ID_LOTE=" + IdLote;
                         Prot_box = lin[149].ToString(),
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
-                        V3 = lin[152].ToString()
+                        V3 = lin[152].ToString(),
+                        Espesor =lin[153].ToString()
 
                     };
                     lista_datos.Add(linea);
@@ -6393,6 +6430,7 @@ WHERE ID_LOTE=" + IdLote;
             public string V1 { get; set; }
             public string V2 { get; set; }
             public string V3 { get; set; }
+            public string Espesor { get; set; }
         }
 
         [WebMethod]

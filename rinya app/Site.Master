@@ -88,6 +88,8 @@
                                  <li><a runat="server" href="~/Calidad/Otros_Controles/Control_liberado.aspx">Control Liberacion Automatica</a></li>
                              <li><a runat="server" href="~/Calidad/Otros_Controles/Indicador_Temperaturas.aspx">Indicador Temperatura</a></li>
                                 <li><a runat="server" href="~/Calidad/Otros_Controles/Indicador_TPP.aspx">Indicador Tiempo en Planta</a></li>
+                                  <li><a runat="server" href="~/Calidad/Otros_Controles/tpp_tpt.aspx">TPP TPT Matricula</a></li>
+          
                                <li><a runat="server" href="~/Calidad/Otros_Controles/Control_Lote_Articulo.aspx">Control Lote Artículo</a></li>
                            
                               </ul>

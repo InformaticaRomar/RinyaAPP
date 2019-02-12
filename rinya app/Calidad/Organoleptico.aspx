@@ -1521,6 +1521,8 @@
                               C_Datos.V1 = $('#text_125').val();
                               C_Datos.V2 = $('#text_126').val();
                               C_Datos.V3 = $('#text_127').val();
+                              C_Datos.Espesor = $('#text_128').val();
+                              
                               C_Datos.CARAC_LOTE = $('#Texto_cara_lote').val();
                               var Usuario = $('#Usuario').val();
                               if (Usuario == '100') {
@@ -1840,6 +1842,7 @@
                  <th>V1</th>
                  <th>V2</th>
                  <th>V3</th>
+                 <th>Espesor</th>
              </tr>
       </thead>
       <tbody></tbody>
@@ -1856,6 +1859,7 @@
 				  <th class="tfoot_search">ESTADO</th>
 				  <th class="tfoot_Enter">SSCC</th>
 				  <th></th>
+                <th></th>
 				  <th></th>
 				  <th class="tfoot_search">F.FAB</th>
 				  <th ></th>
@@ -2855,6 +2859,13 @@
                             <td id ="lbl_127" style="width: 250px">V3</td>   
                             <td class="cell">
                                  <input id="text_127" type="text" class="form-control" value="" style="width: 250px"/>
+                            </td>
+                </tr>
+                 <tr id="Blck_128">
+
+                            <td id ="lbl_128" style="width: 250px">Espesor</td>   
+                            <td class="cell">
+                                 <input id="text_128" type="text" class="form-control" value="" style="width: 250px"/>
                             </td>
                 </tr>
               
