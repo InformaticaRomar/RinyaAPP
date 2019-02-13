@@ -974,6 +974,10 @@
                                     {
                                         "targets": [153],
                                         "className": "none"
+                   },
+                                    {
+                                        "targets": [154],
+                                        "className": "none"
                                     },
                {
                    "aTargets": [8],
@@ -1104,7 +1108,7 @@
               $('#blck_ID').hide();
               $('#blck_ID_LOTE').hide();
               C_Datos.MERMA = $(nTds[65]).text();
-              for (var j = 1; j <= 128; j++){
+              for (var j = 1; j <= 129; j++){
                   $('#Blck_' + j).hide();
                  
               }
@@ -1195,7 +1199,7 @@
                                   $('#text_E_abajo_A').prop('checked', false);
                                   $('#text_E_abajo_B').prop('checked', false);
                               }
-                              for (var j = 1; j <= 128; j++) {
+                              for (var j = 1; j <= 129; j++) {
                                   $('#Blck_' + j).hide();
 
                               }
