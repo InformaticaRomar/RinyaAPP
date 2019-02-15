@@ -96,7 +96,7 @@ namespace rinya_app
                 Context.Request.Cookies[FormsAuthentication.FormsCookieName];
             if (decryptedCookie != null)
             {
-                string a = "";
+               
                 FormsAuthenticationTicket ticket =
                FormsAuthentication.Decrypt(decryptedCookie.Value);
 

@@ -1,5 +1,5 @@
 table.fixedHeader-floating {
-  position: fixed !important;
+  position: fixed;
   background-color: white;
 }
 
@@ -8,12 +8,11 @@ table.fixedHeader-floating.no-footer {
 }
 
 table.fixedHeader-locked {
-  position: absolute !important;
+  position: absolute;
   background-color: white;
 }
 
-@media print {
-  table.fixedHeader-floating {
-    display: none;
-  }
+table.fixedHeader-locked {
+  position: absolute;
+  background-color: white;
 }
