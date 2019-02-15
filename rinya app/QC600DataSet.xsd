@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QC600DataSet" targetNamespace="http://tempuri.org/QC600DataSet.xsd" xmlns:mstns="http://tempuri.org/QC600DataSet.xsd" xmlns="http://tempuri.org/QC600DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="QC600ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QC600ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.QC600ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_Articulo_lote_Turno_fechasTableAdapter" GeneratorDataComponentClassName="V_Articulo_lote_Turno_fechasTableAdapter" Name="V_Articulo_lote_Turno_fechas" UserDataComponentName="V_Articulo_lote_Turno_fechasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QC600ConnectionString (Web.config)" DbObjectName="QC600.dbo.V_Articulo_lote_Turno_fechas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Artículo, Descripción, LoteInterno, Fecha, Turno FROM dbo.V_Articulo_lote_Turno_fechas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Artículo" DataSetColumn="Artículo" />
+              <Mapping SourceColumn="Descripción" DataSetColumn="Descripción" />
+              <Mapping SourceColumn="LoteInterno" DataSetColumn="LoteInterno" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Turno" DataSetColumn="Turno" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QC600DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QC600DataSet" msprop:Generator_UserDSName="QC600DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_Articulo_lote_Turno_fechas" msprop:Generator_TableClassName="V_Articulo_lote_Turno_fechasDataTable" msprop:Generator_TableVarName="tableV_Articulo_lote_Turno_fechas" msprop:Generator_TablePropName="V_Articulo_lote_Turno_fechas" msprop:Generator_RowDeletingName="V_Articulo_lote_Turno_fechasRowDeleting" msprop:Generator_RowChangingName="V_Articulo_lote_Turno_fechasRowChanging" msprop:Generator_RowEvHandlerName="V_Articulo_lote_Turno_fechasRowChangeEventHandler" msprop:Generator_RowDeletedName="V_Articulo_lote_Turno_fechasRowDeleted" msprop:Generator_UserTableName="V_Articulo_lote_Turno_fechas" msprop:Generator_RowChangedName="V_Articulo_lote_Turno_fechasRowChanged" msprop:Generator_RowEvArgName="V_Articulo_lote_Turno_fechasRowChangeEvent" msprop:Generator_RowClassName="V_Articulo_lote_Turno_fechasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Artículo" msprop:Generator_ColumnVarNameInTable="columnArtículo" msprop:Generator_ColumnPropNameInRow="Artículo" msprop:Generator_ColumnPropNameInTable="ArtículoColumn" msprop:Generator_UserColumnName="Artículo" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_UserColumnName="Descripción" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoteInterno" msprop:Generator_ColumnVarNameInTable="columnLoteInterno" msprop:Generator_ColumnPropNameInRow="LoteInterno" msprop:Generator_ColumnPropNameInTable="LoteInternoColumn" msprop:Generator_UserColumnName="LoteInterno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Turno" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTurno" msprop:Generator_ColumnPropNameInRow="Turno" msprop:Generator_ColumnPropNameInTable="TurnoColumn" msprop:Generator_UserColumnName="Turno" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

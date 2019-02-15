@@ -20,6 +20,25 @@ namespace rinya_app.Calidad.Otros_Controles
     [System.Web.Script.Services.ScriptService]
     public class WebService_SILO : System.Web.Services.WebService
     {
+        public DataTable dt_fechas_articulo_lote(string desde, string hasta)
+        {
+            string sql = @" SELECT * FROM V_Articulo_lote_Turno_fechas  where Fecha BETWEEN CONVERT(DATETIME,'" + desde + @"',103) AND CONVERT(DATETIME,'" + hasta + @"',103)";
+            Quality con = new Quality();
+            DataTable datos = con.Sql_Datatable(sql);
+
+
+            return datos;
+        }
+        public DataTable dt_fechas_articulo_lote(string desde, string hasta, string turno)
+        {
+            string sql = @" SELECT * FROM V_Articulo_lote_Turno_fechas  where Fecha BETWEEN CONVERT(DATETIME,'" + desde + @"',103) AND CONVERT(DATETIME,'" + hasta + @"',103) and turno="+turno;
+            Quality con = new Quality();
+            DataTable datos = con.Sql_Datatable(sql);
+
+
+            return datos;
+        }
+
         [WebMethod(EnableSession = true)]
         public void New_Data(SILO datos)
         {

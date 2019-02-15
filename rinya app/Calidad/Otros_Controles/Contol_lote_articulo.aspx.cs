@@ -9,6 +9,7 @@ using System.Data;
 using Utiles;
 using Microsoft.Reporting.WebForms;
 
+
 namespace rinya_app.Calidad.Otros_Controles
 {
     public partial class Contol_lote_articulo : System.Web.UI.Page
@@ -86,6 +87,11 @@ namespace rinya_app.Calidad.Otros_Controles
             {
 
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
