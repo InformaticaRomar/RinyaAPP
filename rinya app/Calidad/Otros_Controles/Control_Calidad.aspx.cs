@@ -25,7 +25,7 @@ namespace rinya_app.Calidad.Otros_Controles
        // [WebMethod(EnableSession = true)]
         private void obtener_datos (int tipo_select)
         {
-            bool resultado = false;
+         //   bool resultado = false;
             string strdocPath;
             strdocPath = HttpContext.Current.Server.MapPath(".") + @"\documentos\Control_Laboratorio.xlsx";
 

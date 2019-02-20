@@ -256,16 +256,14 @@ select new { C = dataRows1, r == null ? "0" : dataRows2.Field<string>("ARTICULO"
 
                 DataTable table = datos_Pre_excel(Session["datos"] as DataTable);
                 //DataTable table2 =new DataTable();
-                int j = 0;
+               
                 foreach (DataColumn col in table.Columns)
                 {
                    
                     string nombre = Get_caracteristicas_nombre(col.ColumnName);
                     if (nombre.Length > 0)
                         table.Columns[col.ColumnName].ColumnName = nombre;
-                    else {
-                        int a = 0;
-                            }
+                    
                 }
                     List<string> articulos = new List<string>();
                 var dat = table.AsEnumerable().Select(r => r["ARTICULO"]).Distinct();

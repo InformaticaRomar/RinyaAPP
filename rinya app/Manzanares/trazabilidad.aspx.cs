@@ -160,7 +160,7 @@ ORDER BY DPC_NUMERO_ALBARAN";
         }
         protected void Btexport_Click(object sender, EventArgs e)
         {
-            string oFileName = @"C:\temp\traza.xls";
+           // string oFileName = @"C:\temp\traza.xls";
             
             try
             {
@@ -171,7 +171,7 @@ ORDER BY DPC_NUMERO_ALBARAN";
                 }
 
             } catch(Exception ex)
-            {}
+            { Console.WriteLine(ex.Message); }
         }
        
         protected void TBLabel_TextChanged(object sender, EventArgs e)

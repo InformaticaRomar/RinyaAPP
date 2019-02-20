@@ -158,9 +158,11 @@ namespace rinya_app.Account
                     userIsInRole = true;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("Error al acceder a los datos.");
+                
             }
             finally
             {
@@ -192,8 +194,9 @@ namespace rinya_app.Account
                     existe = true;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw new Exception("Error al acceder a los Roles");
             }
             finally

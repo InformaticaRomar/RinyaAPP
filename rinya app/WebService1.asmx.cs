@@ -109,7 +109,7 @@ namespace rinya_app
             string sql = "update [QC600].[dbo].[ZONA] set [Nombre]='"+datos.Nombre + "' where [Zona]="+datos.Zona;
             Utiles.Quality lanza = new Quality();
             lanza.sql_update(sql);
-            int a = 0;
+           
         }
         private string GetRecordsFromDatabaseWithFilter() {
             return null; }
@@ -136,34 +136,7 @@ namespace rinya_app
         }
 
 
-        public string HelloWorld()
-        {
-            string result = "";
-          //  var serializer = new XmlSerializer(typeof(List<string>));
-           
-            /*
-            XElement xml = new XElement("Zona",
-                from emp in ObtenerZonas()
-                select new XElement("ZONA",
-                             new XAttribute("ID", emp.Zona),
-                               new XElement("FName", emp.Nombre)
-                           ));*/
-            DataTable dt = ObtenerZonas2();
-            System.Web.Script.Serialization.JavaScriptSerializer serializer2 = new System.Web.Script.Serialization.JavaScriptSerializer();
-            List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
-            Dictionary<string, object> row;
-            foreach (DataRow dr in dt.Rows)
-            {
-                row = new Dictionary<string, object>();
-                foreach (DataColumn col in dt.Columns)
-                {
-                    row.Add(col.ColumnName, dr[col]);
-                }
-                rows.Add(row);
-            }
-            return GetTableData();
-            
-        }
+      
         public IEnumerable <Zonas> ObtenerZonas()
         {
             string sql = @"SELECT [Zona],[Nombre] FROM [QC600].[dbo].[ZONA]";

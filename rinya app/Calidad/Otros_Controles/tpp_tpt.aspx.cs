@@ -39,7 +39,7 @@ namespace rinya_app.Calidad.Otros_Controles
             // get all data and autofit
             r = ws.Cells[1, 1, rowCount + 1, columnCount];
             r.AutoFitColumns();
-        }catch(Exception ex){}
+        }catch(Exception ex) { Console.WriteLine(ex.Message); }
 
 
         }

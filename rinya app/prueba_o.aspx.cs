@@ -25,7 +25,7 @@ namespace rinya_app
                 GridView1.DataBind();
             }
         }
-        public DataTable Sql_Datatable(string sql)
+       /* public DataTable Sql_Datatable(string sql)
         {
             string Con_E = @"Data Source=(DESCRIPTION =    (ADDRESS_LIST =      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.58)(PORT = 1521))    )    (CONNECT_DATA = (SID = dbgrinya))  );User Id=grinya_expert;Password=datadec;";
             DataTable dt = new DataTable("Lineas");
@@ -53,7 +53,7 @@ namespace rinya_app
                 }
             }
 
-        }
+        } */
         private bool esnumero(string cadena)
         {
 
@@ -102,23 +102,6 @@ namespace rinya_app
             Button3.Enabled = true;
         }
         
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            Export sacardatos = new Export();
-            string sql = @"SELECT PRO_CODIGO_PRODUCTO P_CODARTICULO,
-       PRO_DESCRIPCION_CORTA P_DSCR,
-       PRO_CLAVE_ESTAD_PRINCIPAL P_FAMILIA
- from PR_PRODUCTO where PRO_EMPRESA=1";
-            //datos = con.Sql_Datatable(sql);
-            try { 
-            if (datos!=null)
-            sacardatos.ToExcelfile(@"C:\temp\prueba.xls", datos);
-            } catch(Exception ex)
-            {
-              
-            Response.Write("<script type=\"text/javascript\">alert('" + ex.Message.Replace("'", "") + "');</script>");
-            }
-            Button3.Enabled = false;
-        }
+        
     }
 }

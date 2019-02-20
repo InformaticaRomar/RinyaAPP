@@ -70,9 +70,14 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Aliases>global</Aliases>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\odp.net.managed.121.1.2\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
@@ -235,6 +240,8 @@
     <Content Include="Calidad\Otros_Controles\Control_Silo.aspx" />
     <Content Include="Calidad\Otros_Controles\Indicador_Temperaturas.aspx" />
     <Content Include="Calidad\Otros_Controles\Indicador_TPP.aspx" />
+    <Content Include="Calidad\Otros_Controles\Informe_Articulo_lote.aspx" />
+    <Content Include="Calidad\Otros_Controles\Informe_Articulo_lote_r.aspx" />
     <Content Include="Calidad\Otros_Controles\tpp_tpt.aspx" />
     <Content Include="Calidad\Otros_Controles\WebService_SILO.asmx" />
     <Content Include="Calidad\A_Lote.aspx" />
@@ -1527,6 +1534,20 @@
     <Compile Include="Calidad\Otros_Controles\Indicador_TPP.aspx.designer.cs">
       <DependentUpon>Indicador_TPP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Otros_Controles\Informe_Articulo_lote.aspx.cs">
+      <DependentUpon>Informe_Articulo_lote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\Informe_Articulo_lote.aspx.designer.cs">
+      <DependentUpon>Informe_Articulo_lote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\Informe_Articulo_lote_r.aspx.cs">
+      <DependentUpon>Informe_Articulo_lote_r.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\Informe_Articulo_lote_r.aspx.designer.cs">
+      <DependentUpon>Informe_Articulo_lote_r.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Calidad\Otros_Controles\tpp_tpt.aspx.cs">
       <DependentUpon>tpp_tpt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1866,6 +1887,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Calidad\Otros_Controles\informes\Informe_Articulo_lote.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calidad\Otros_Controles\informes\report.rdlc" />
+    <EmbeddedResource Include="Calidad\Otros_Controles\informes\Report1.rdlc" />
     <EmbeddedResource Include="Calidad\Trazabilidad\Report1.rdlc" />
     <EmbeddedResource Include="Calidad\Trazabilidad\Report2.rdlc" />
     <EmbeddedResource Include="Properties\licenses.licx" />

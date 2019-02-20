@@ -89,6 +89,7 @@ WHERE albaran_cabe.[Nº Albarán]>0 and ALBARAN_LIN.Cantidad>0 and ((dbo.ALBARAN
             }
             catch (System.Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 //  strMsg = ex.Message;
             }
             finally

@@ -115,9 +115,11 @@
                                  <li><a runat="server" href="~/Calidad/Organoleptico.aspx">Organoleptico Calidad</a></li>
                                 
                                  <li class="divider"></li>
+                               
                                   <li><a runat="server" href="~/Calidad/A_Lote.aspx">Estado Lote Articulo</a></li>
                                  <li><a runat="server" href="~/Calidad/Otros_Controles/Control_Lote_Articulo.aspx">Control Lote Artículo</a></li>
-                            
+                              <li class="divider"></li>
+                               <li><a runat="server" href="~/Calidad/Otros_Controles/Informe_Articulo_lote.aspx">Informe Lote Artículo Turno</a></li>
                             </ul>
                             
 

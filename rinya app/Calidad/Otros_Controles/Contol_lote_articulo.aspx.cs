@@ -85,7 +85,7 @@ namespace rinya_app.Calidad.Otros_Controles
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 

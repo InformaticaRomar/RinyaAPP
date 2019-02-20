@@ -11,11 +11,7 @@ namespace rinya_app.Calidad.Maestro
     public partial class WebForm1 : System.Web.UI.Page
     {
         [WebMethod(EnableSession = true)]
-        public static void hola() {
-            int a = 0;
-            a = 1;
-
-        }
+      
 
         protected void Page_Load(object sender, EventArgs e)
         {

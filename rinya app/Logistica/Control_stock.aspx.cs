@@ -76,7 +76,7 @@ namespace rinya_app.Logistica
 
                 }
                 catch (Exception ex)
-                { }
+                { Console.WriteLine(ex.Message); }
             }
         }
         private void ExportToExcel(DataTable dt,string filename)
@@ -214,7 +214,8 @@ ORDER BY [STOCK PARTIDAS].Artículo";
             }
             catch (System.Exception ex)
             {
-              //  strMsg = ex.Message;
+                Console.WriteLine(ex.Message);
+                //  strMsg = ex.Message;
             }
             finally
             {

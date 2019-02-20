@@ -8,6 +8,7 @@ using System.Data;
 
 namespace Utiles
 {
+#pragma warning disable CA2100
     public class Expert
     {
         #region Contructor

@@ -93,6 +93,7 @@ GROUP BY ALBARAN_CABE.[Código Cliente], ALBARAN_CABE.[Nº Albarán], CLIENTE.No
             catch (System.Exception ex)
             {
                 //  strMsg = ex.Message;
+                Console.WriteLine(ex.Message);
             }
             finally
             {

@@ -58,7 +58,7 @@ namespace rinya_app.Calidad.Otros_Controles
             int rowCount = table.Rows.Count;
 
             ExcelRange r;
-            ExcelRange r2;
+           // ExcelRange r2;
             // which columns have dates in
            
             for (int i = 1; i <= columnCount; i++)

@@ -36,7 +36,7 @@ namespace rinya_app.Calidad
             string sql2 = "update SSCC_CON set Brix=" + datos.Brix.Replace(',', '.') + " , Color=" + datos.Color.Replace(',', '.') + " , Corte= " + datos.Corte.Replace(',', '.') + " , Film=" + datos.Film.Replace(',', '.') + " , Ph= " + datos.Ph.Replace(',', '.') +
             " , Sabor = " + datos.Sabor.Replace(',', '.') + " , Temperatura = "+datos.Temperatura.Replace(',', '.') + " , Textura = "+ datos.Textura.Replace(',', '.')+ " WHERE IdPadre ="+ sscc_id;
             con.sql_update(sql2);
-            int a = 0;
+           // int a = 0;
         }
         public class Estados
         {

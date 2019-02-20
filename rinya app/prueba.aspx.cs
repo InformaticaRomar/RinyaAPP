@@ -24,6 +24,7 @@ namespace rinya_app
             return int.TryParse(s, out i);
 
         }
+        /*
         private DataTable Sql_Datatable(string sql)
         {
             DataTable dt = new DataTable("Lineas");
@@ -47,7 +48,7 @@ namespace rinya_app
                 throw;
             }
         }
-
+        */
         protected void Button1_Click(object sender, EventArgs e)
         {
    //         Table1.Visible = false;
@@ -58,7 +59,7 @@ namespace rinya_app
 
                 string sql = @"SELECT TOP 1000 [Zona],[Nombre] FROM [QC600].[dbo].[ZONA] where [Zona]=" + zona;
 
-                DataView source = new DataView(Sql_Datatable(sql));
+                DataView source = null;// new DataView(Sql_Datatable(sql));
                 GridView1.DataSource = source;
                 GridView1.DataBind();
                 GridView1.Visible = true;
@@ -73,9 +74,9 @@ namespace rinya_app
         {
             //Table1.Visible = false;
             string zona = TextBox1.Text;
-            string sql = @"SELECT TOP 1000 [Zona],[Nombre] FROM [QC600].[dbo].[ZONA]";
+           // string sql = @"SELECT TOP 1000 [Zona],[Nombre] FROM [QC600].[dbo].[ZONA]";
 
-            DataView source = new DataView(Sql_Datatable(sql));
+            //DataView source = new DataView(Sql_Datatable(sql));
            // GridView1.DataSource = source;
             //GridView1.DataBind();
             //GridView1.Visible = true;

@@ -93,28 +93,13 @@ namespace rinya_app
             //SoftToRuleGridView1.Visible = true;
         }
 
-        protected void DataGridAutoFilter1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int a = 0;
-            a = 3;
-
-        }
+       
       
         protected void DataGridAutoFilter1_UpdateCommand(object source, DataGridCommandEventArgs e)
         {
             string valor = e.Item.FindControl("list").ToString();
         }
 
-        protected void DataGridAutoFilter1_SelectedIndexChanged(object source, DataGridSortCommandEventArgs e)
-        {
-            int a = 0;
-            a = 3;
-        }
-
-        protected void DataGridAutoFilter1_EditCommand(object source, DataGridCommandEventArgs e)
-        {
-            int a = 0;
-            a = 3;
-        }
+      
     }
 }

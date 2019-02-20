@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Informe_Articulo_lote.aspx.cs" Inherits="rinya_app.Calidad.Otros_Controles.Informe_Articulo_lote" %>
 
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
       <link href="../../Scripts/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="../../Scripts/jquery-ui/jquery-ui.js"></script>
