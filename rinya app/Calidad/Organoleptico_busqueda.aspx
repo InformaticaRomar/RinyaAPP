@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Organoleptico" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master"  CodeBehind="Organoleptico.aspx.cs" Inherits="rinya_app.Calidad.Organoleptico" %>
+﻿<%@ Page Title="Organoleptico Matricula" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master"  CodeBehind="Organoleptico_busqueda.aspx.cs" Inherits="rinya_app.Calidad.Organoleptico" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" >
    
@@ -307,9 +307,17 @@
            combo.val(selected).change();
         
        }
+       function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
-
-       function loadTable( tipo) {
+       function loadTable( SSCC) {
            if ($.fn.dataTable.isDataTable('#tblData')) {
 
                var table = $('#tblData').DataTable();
@@ -1119,12 +1127,11 @@
 
                "bProcessing": true,
                "bServerSide": true,
-               "sAjaxSource": "WebService_Organoleptico.asmx/GetTableData",
+               "sAjaxSource": "WebService_Organoleptico.asmx/GetTableData_SSCC",
                
                "fnServerData": function (sSource, aoData, fnCallback) {
-                   aoData.push({ "name": "fecha1", "value": $("#datepicker1").val() });
-                   aoData.push({ "name": "fecha2", "value": $("#datepicker2").val() });
-                   aoData.push({ "name": "tipo", "value": tipo });
+                  
+                   aoData.push({ "name": "SSCC", "value": SSCC });
                    $.ajax({
                        "dataType": 'json',
                        "contentType": "application/json; charset=utf-8",
@@ -1818,7 +1825,8 @@
 
            $("#datepicker1").datepicker().datepicker("setDate", semana_dia);
            $("#datepicker2").datepicker().datepicker("setDate", new Date());
-           $('#btnTodas').click(loadTable('1'));
+           loadTable(getParameterByName('sscc'));
+           //$('#btnTodas').click(loadTable( getParameterByName('sscc')));
         
           
        });
@@ -1833,13 +1841,13 @@
         <tr>
 
           <th>
-<p>Desde: <input type="text" id="datepicker1" class="form-control" style="width: 98px"></p>
+    <!-- <p>Desde: <input type="text" id="datepicker1" class="form-control" style="width: 98px"></p>
               </th>
 <th> <p>Hasta: <input type="text" id="datepicker2" class="form-control" style="width: 98px"></p></th>
-             <th>&nbsp;&nbsp; <p>&nbsp;&nbsp;<input id="btnToda" type="button" Value="Obtener Matriculas" class="btn btn-default" onclick="loadTable('1');"/></p></th>
+        <!--     <th>&nbsp;&nbsp; <p>&nbsp;&nbsp;<input id="btnToda" type="button" Value="Obtener Matriculas" class="btn btn-default" onclick="loadTable('1');"/></p></th>
            <th> &nbsp;&nbsp;<p>&nbsp;&nbsp;<input id="btnFormula" type="button" Value="Obtener Formulas" class="btn btn-default" onclick="loadTable('2');"/> </p></th>
              <th> &nbsp;&nbsp;<p>&nbsp;&nbsp;<input id="btnventa" type="button" Value="Obtener Articulo" class="btn btn-default" onclick="loadTable('3');"/> </p></th>
-             <th> &nbsp;&nbsp;<p>&nbsp;&nbsp;<input id="btnMprima" type="button" Value="Obtener M. Prima" class="btn btn-default" onclick="loadTable('4');"/> </p></th>
+             <th> &nbsp;&nbsp;<p>&nbsp;&nbsp;<input id="btnMprima" type="button" Value="Obtener M. Prima" class="btn btn-default" onclick="loadTable('4');"/> </p></th>-->
      
             </tr>
 

@@ -104,7 +104,9 @@
                            <ul class="dropdown-menu" >
                            
                             <li><a runat="server" href="~/Calidad/Otros_Controles/Control_Silo.aspx">Control Silo</a></li>
-                            
+                            <li><a runat="server" href="~/Calidad/Otros_Controles/tpp_tpt.aspx">TPP TPT Matricula</a></li>
+          
+
                               
                               </ul>
                                 </li>
@@ -113,14 +115,17 @@
                                  <li class="divider"></li>
 
                                  <li><a runat="server" href="~/Calidad/Organoleptico.aspx">Organoleptico Calidad</a></li>
-                                
+                                <li><a runat="server" href="~/Calidad/validacion_matricula.aspx">Validacion Matricula</a></li>
                                  <li class="divider"></li>
                                
                                   <li><a runat="server" href="~/Calidad/A_Lote.aspx">Estado Lote Articulo</a></li>
                                  <li><a runat="server" href="~/Calidad/Otros_Controles/Control_Lote_Articulo.aspx">Control Lote Artículo</a></li>
                               <li class="divider"></li>
                                <li><a runat="server" href="~/Calidad/Otros_Controles/Informe_Articulo_lote.aspx">Informe Lote Artículo Turno</a></li>
-                            </ul>
+                            <li class="divider"></li>
+                               <li><a runat="server" href="~/Calidad/Otros_Controles/Control_huevo.aspx">Informe Control Huevo</a></li>
+ 
+                           </ul>
                             
 
                     </li>

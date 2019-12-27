@@ -7,28 +7,19 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace rinya_app.Calidad.Otros_Controles {
+namespace rinya_app.Calidad {
     
     
-    public partial class Control_Lote_Articulo {
+    public partial class validacion_matricula {
         
         /// <summary>
-        /// Control DropDown_Articulo.
+        /// Control SSCC_textBoxs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDown_Articulo;
-        
-        /// <summary>
-        /// Control Lote_textBoxs.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Lote_textBoxs;
+        protected global::System.Web.UI.WebControls.TextBox SSCC_textBoxs;
         
         /// <summary>
         /// Control BtBuscar.

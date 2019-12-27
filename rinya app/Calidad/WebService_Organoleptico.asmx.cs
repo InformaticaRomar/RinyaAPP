@@ -848,7 +848,100 @@ select new { C = dataRows1, r == null ? "0" : dataRows2.Field<string>("ARTICULO"
                 case "Espesor":
                     caracteristica = "132";
                     break;
-                //Espesor
+                case "Pegajosidad":
+                    caracteristica = "133";
+                    break;
+                case "caract_temp1":
+                    caracteristica = "134";
+                    break;
+                case "caract_temp2":
+                    caracteristica = "135";
+                    break;
+                case "caract_temp3":
+                    caracteristica = "136";
+                    break;
+                case "caract_temp4":
+                    caracteristica = "137";
+                    break;
+                case "caract_temp5":
+                    caracteristica = "138";
+                    break;
+                case "caract_temp6":
+                    caracteristica = "139";
+                    break;
+                case "caract_temp7":
+                    caracteristica = "140";
+                    break;
+                case "caract_temp8":
+                    caracteristica = "141";
+                    break;
+                case "caract_temp9":
+                    caracteristica = "142";
+                    break;
+                case "caract_temp10":
+                    caracteristica = "143";
+                    break;
+                case "caract_temp11":
+                    caracteristica = "144";
+                    break;
+                case "caract_temp12":
+                    caracteristica = "145";
+                    break;
+                case "caract_temp13":
+                    caracteristica = "146";
+                    break;
+                case "caract_temp14":
+                    caracteristica = "147";
+                    break;
+                case "caract_temp15":
+                    caracteristica = "148";
+                    break;
+                case "caract_temp16":
+                    caracteristica = "149";
+                    break;
+                case "caract_temp17":
+                    caracteristica = "150";
+                    break;
+                case "caract_temp18":
+                    caracteristica = "151";
+                    break;
+                case "caract_temp19":
+                    caracteristica = "152";
+                    break;
+                case "caract_temp20":
+                    caracteristica = "153";
+                    break;
+                case "caract_temp21":
+                    caracteristica = "154";
+                    break;
+                case "caract_temp22":
+                    caracteristica = "155";
+                    break;
+                case "caract_temp23":
+                    caracteristica = "156";
+                    break;
+                case "caract_temp24":
+                    caracteristica = "157";
+                    break;
+                case "caract_temp25":
+                    caracteristica = "158";
+                    break;
+                case "caract_temp26":
+                    caracteristica = "159";
+                    break;
+                case "caract_temp27":
+                    caracteristica = "160";
+                    break;
+                case "caract_temp28":
+                    caracteristica = "161";
+                    break;
+                case "caract_temp29":
+                    caracteristica = "162";
+                    break;
+                case "caract_temp30":
+                    caracteristica = "163";
+                    break;
+
 
                 default:
                     caracteristica = columna;
@@ -1231,6 +1324,99 @@ select new { C = dataRows1, r == null ? "0" : dataRows2.Field<string>("ARTICULO"
                     break;
                 case "132":
                     columna = "Espesor";
+                    break;
+                case "133":
+                    columna = "Pegajosidad";
+                    break;
+                case "134":
+                    columna = "caract_temp1";
+                    break;
+                case "135":
+                    columna = "caract_temp2";
+                    break;
+                case "136":
+                    columna = "caract_temp3";
+                    break;
+                case "137":
+                    columna = "caract_temp4";
+                    break;
+                case "138":
+                    columna = "caract_temp5";
+                    break;
+                case "139":
+                    columna = "caract_temp6";
+                    break;
+                case "140":
+                    columna = "caract_temp7";
+                    break;
+                case "141":
+                    columna = "caract_temp8";
+                    break;
+                case "142":
+                    columna = "caract_temp9";
+                    break;
+                case "143":
+                    columna = "caract_temp10";
+                    break;
+                case "144":
+                    columna = "caract_temp11";
+                    break;
+                case "145":
+                    columna = "caract_temp12";
+                    break;
+                case "146":
+                    columna = "caract_temp13";
+                    break;
+                case "147":
+                    columna = "caract_temp14";
+                    break;
+                case "148":
+                    columna = "caract_temp15";
+                    break;
+                case "149":
+                    columna = "caract_temp16";
+                    break;
+                case "150":
+                    columna = "caract_temp17";
+                    break;
+                case "151":
+                    columna = "caract_temp18";
+                    break;
+                case "152":
+                    columna = "caract_temp19";
+                    break;
+                case "153":
+                    columna = "caract_temp20";
+                    break;
+                case "154":
+                    columna = "caract_temp21";
+                    break;
+                case "155":
+                    columna = "caract_temp22";
+                    break;
+                case "156":
+                    columna = "caract_temp23";
+                    break;
+                case "157":
+                    columna = "caract_temp24";
+                    break;
+                case "158":
+                    columna = "caract_temp25";
+                    break;
+                case "159":
+                    columna = "caract_temp26";
+                    break;
+                case "160":
+                    columna = "caract_temp27";
+                    break;
+                case "161":
+                    columna = "caract_temp28";
+                    break;
+                case "162":
+                    columna = "caract_temp29";
+                    break;
+                case "163":
+                    columna = "caract_temp30";
                     break;
 
 
@@ -2968,8 +3154,322 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                     VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",132," + datos.Espesor.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
                 con.sql_update(sql);
             }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.Pegajosidad, out Datos_actuales);
+            double.TryParse(datos_antiguo.Pegajosidad, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+                    VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",133," + datos.Pegajosidad.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
 
-            
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp1, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp1, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",134," + datos.caract_temp1.Replace(',', '.') + ",'" + usuario + "',GETDATE())";  
+            con.sql_update(sql);
+            }
+
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp2, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp2, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",135," + datos.caract_temp2.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp3, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp3, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",136," + datos.caract_temp3.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp4, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp4, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",137," + datos.caract_temp4.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp5, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp5, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",138," + datos.caract_temp5.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp6, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp6, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",139," + datos.caract_temp6.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp7, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp7, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",140," + datos.caract_temp7.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp8, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp8, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",141," + datos.caract_temp8.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp9, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp9, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",142," + datos.caract_temp9.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp10, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp10, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",143," + datos.caract_temp10.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp11, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp11, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",144," + datos.caract_temp11.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp12, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp12, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",145," + datos.caract_temp12.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp13, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp13, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",146," + datos.caract_temp13.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp14, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp14, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",147," + datos.caract_temp14.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp15, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp15, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",148," + datos.caract_temp15.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp16, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp16, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",149," + datos.caract_temp16.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp17, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp17, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",150," + datos.caract_temp17.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp18, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp18, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",151," + datos.caract_temp18.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp19, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp19, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",152," + datos.caract_temp19.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp20, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp20, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",153," + datos.caract_temp20.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp21, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp21, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",154," + datos.caract_temp21.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp22, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp22, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",155," + datos.caract_temp22.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp23, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp23, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",156," + datos.caract_temp23.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp24, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp24, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",157," + datos.caract_temp24.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp25, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp25, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",158," + datos.caract_temp25.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp26, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp26, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",159," + datos.caract_temp26.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp27, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp27, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",160," + datos.caract_temp27.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp28, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp28, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",161," + datos.caract_temp28.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp29, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp29, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",162," + datos.caract_temp29.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+            Datos_actuales = -999999;
+            Datos_anteriores = -999999;
+            double.TryParse(datos.caract_temp30, out Datos_actuales);
+            double.TryParse(datos_antiguo.caract_temp30, out Datos_anteriores);
+            if (Datos_actuales != Datos_anteriores && Datos_actuales != -1 && Datos_actuales != -999999)
+            {
+                sql = @"INSERT INTO [CARACTERISTICAS_DATOS] ( ARTICULO, SSCC, ID_LOTE, CARACTERISTICA, VALOR, USUARIO, FECHA) 
+   VALUES (" + datos.ARTICULO + ",'" + datos.SSCC + "'," + datos.ID_LOTE + ",163," + datos.caract_temp30.Replace(',', '.') + ",'" + usuario + "',GETDATE())";
+                con.sql_update(sql);
+            }
+
+
+
             return false;
         }
         
@@ -3708,7 +4208,163 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                 sql = "update [DATOS_ORGANOLEPTICO] set [Espesor]='" + datos.Espesor + "' where [ID_LOTE]=" + datos.ID_LOTE;
                 con.sql_update(sql);
             }
-            
+            if (datos.Pegajosidad.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [Pegajosidad]='" + datos.Pegajosidad + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp1.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp1]='" + datos.caract_temp1 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp2.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp2]='" + datos.caract_temp2 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp3.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp3]='" + datos.caract_temp3 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp4.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp4]='" + datos.caract_temp4 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp5.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp5]='" + datos.caract_temp5 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp6.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp6]='" + datos.caract_temp6 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp7.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp7]='" + datos.caract_temp7 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp8.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp8]='" + datos.caract_temp8 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp9.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp9]='" + datos.caract_temp9 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp10.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp10]='" + datos.caract_temp10 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp11.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp11]='" + datos.caract_temp11 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp12.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp12]='" + datos.caract_temp12 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp13.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp13]='" + datos.caract_temp13 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp14.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp14]='" + datos.caract_temp14 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp15.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp15]='" + datos.caract_temp15 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp16.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp16]='" + datos.caract_temp16 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp17.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp17]='" + datos.caract_temp17 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp18.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp18]='" + datos.caract_temp18 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp19.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp19]='" + datos.caract_temp19 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp20.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp20]='" + datos.caract_temp20 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp21.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp21]='" + datos.caract_temp21 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp22.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp22]='" + datos.caract_temp22 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp23.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp23]='" + datos.caract_temp23 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp24.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp24]='" + datos.caract_temp24 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp25.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp25]='" + datos.caract_temp25 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp26.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp26]='" + datos.caract_temp26 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp27.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp27]='" + datos.caract_temp27 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp28.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp28]='" + datos.caract_temp28 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp29.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp29]='" + datos.caract_temp29 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+            if (datos.caract_temp30.Length > 000)
+            {
+                sql = "update [DATOS_ORGANOLEPTICO] set [caract_temp30]='" + datos.caract_temp30 + "' where [ID_LOTE]=" + datos.ID_LOTE;
+                con.sql_update(sql);
+            }
+ 
+
             if (datos.ID_ESTADO.Length > 0)
             {
                 int.TryParse(Estado, out EstadoA);
@@ -4269,7 +4925,38 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V2.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V3.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
                 sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Espesor.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
-                
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Pegajosidad.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp1.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp2.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp3.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp4.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp5.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp6.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp7.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp8.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp9.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp10.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp11.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp12.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp13.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp14.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp15.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp16.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp17.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp18.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp19.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp20.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp21.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp22.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp23.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp24.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp25.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp26.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp27.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp28.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp29.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp30.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+
                 sb.Append("\"<img class='image-details' src='content/details_open.png' runat='server' height='16' width='16' alt='View Details'/>\"");
                 sb.Append("]");
                 hasMoreRecords = true;
@@ -4278,6 +4965,334 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
            
 
             return sb.ToString(); 
+
+        }
+        [WebMethod(EnableSession = true)]
+        public string GetTableData_SSCC(object myData)
+        {
+
+            var echo = int.Parse(get_parametters(myData, "sEcho"));
+            var displayLength = int.Parse(get_parametters(myData, "iDisplayLength"));
+            var displayStart = int.Parse(get_parametters(myData, "iDisplayStart"));
+            var sortOrder = get_parametters(myData, "sSortDir_0").ToString(CultureInfo.CurrentCulture);
+            //var roleId = HttpContext.Current.Request.Params["roleId"].ToString(CultureInfo.CurrentCulture);
+           
+            var SSCC = get_parametters(myData, "SSCC").ToString(CultureInfo.CurrentCulture);
+            if (SSCC.Length <= 0)
+            { return string.Empty; }
+            var search = get_parametters(myData, "sSearch").ToString(CultureInfo.CurrentCulture);
+            var search1 = get_parametters(myData, "sSearch_1").ToString(CultureInfo.CurrentCulture);
+            var search2 = get_parametters(myData, "sSearch_2").ToString(CultureInfo.CurrentCulture);
+            var search3 = get_parametters(myData, "sSearch_3").ToString(CultureInfo.CurrentCulture);
+            var search4 = get_parametters(myData, "sSearch_4").ToString(CultureInfo.CurrentCulture);
+            var search5 = get_parametters(myData, "sSearch_5").ToString(CultureInfo.CurrentCulture);
+            var search6 = get_parametters(myData, "sSearch_6").ToString(CultureInfo.CurrentCulture);
+            var search7 = get_parametters(myData, "sSearch_7").ToString(CultureInfo.CurrentCulture);
+            var search8 = get_parametters(myData, "sSearch_8").ToString(CultureInfo.CurrentCulture);
+            var search9 = get_parametters(myData, "sSearch_9").ToString(CultureInfo.CurrentCulture);
+            var search10 = get_parametters(myData, "sSearch_10").ToString(CultureInfo.CurrentCulture);
+            var search11 = get_parametters(myData, "sSearch_11").ToString(CultureInfo.CurrentCulture);
+            var search12 = get_parametters(myData, "sSearch_12").ToString(CultureInfo.CurrentCulture);
+            var search13 = get_parametters(myData, "sSearch_13").ToString(CultureInfo.CurrentCulture);
+            var search14 = get_parametters(myData, "sSearch_14").ToString(CultureInfo.CurrentCulture);
+            // var records = ObtenerCaracteristicas(roleId).ToList();
+            var records = Obtener_datos_sscc(SSCC).ToList(); ;
+
+            if (!records.Any())
+            {
+                return string.Empty;
+            }
+            var filterRecords = records;
+            if (search.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.ARTICULO.ToUpperInvariant().Contains(search.ToUpperInvariant()) || l.SSCC.Contains(search) || l.DESCRIPCION.ToUpperInvariant().Contains(search2.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search1.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.ARTICULO.ToUpperInvariant().Contains(search1.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search2.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.DESCRIPCION.ToUpperInvariant().Contains(search2.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search3.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.LOTE_INTERNO.ToUpperInvariant().Contains(search3.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search4.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.NUMPALET.ToUpperInvariant().Contains(search4.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+
+            if (search5.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.FECHA_SSCC_CON.ToUpperInvariant().Contains(search5.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search8.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.ESTADO.ToUpperInvariant().Contains(search8.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search9.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.SSCC.ToUpperInvariant().Contains(search9.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            /* if (search7.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.SSCC.ToUpperInvariant().Contains(search7.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+           if (search8.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.LOTE_INTERNO.ToUpperInvariant().Contains(search8.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            if (search9.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.ID_LOTE.ToUpperInvariant().Contains(search9.ToUpperInvariant())).ToList();  // prue.ToList();
+            }*/
+            if (search12.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.FECHA_CREACION.ToUpperInvariant().Contains(search12.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            /*  if (search11.Length > 0)
+              {
+                  filterRecords = filterRecords.Where(l => l.HORA.ToUpperInvariant().Contains(search11.ToUpperInvariant())).ToList();  // prue.ToList();
+              }*/
+            if (search14.Length > 0)
+            {
+                filterRecords = filterRecords.Where(l => l.FECHACADUCIDAD.ToUpperInvariant().Contains(search14.ToUpperInvariant())).ToList();  // prue.ToList();
+            }
+            var orderedResults = sortOrder == "asc"
+                                ? filterRecords.OrderBy(o => o.ID)
+                                : filterRecords.OrderByDescending(o => o.ID);
+            var itemsToSkip = displayStart == 0
+                              ? 0
+                              : displayStart;
+            //  var filterRecords = (orderedResults);
+            datos = orderedResults.ToDataTable();
+            Session["datos"] = datos;
+
+
+
+            var pagedResults = orderedResults.Skip(itemsToSkip).ToList();
+
+            if (displayLength >= 0)
+            {
+                pagedResults = orderedResults.Skip(itemsToSkip).Take(displayLength).ToList();
+            }
+
+
+            var hasMoreRecords = false;
+
+            var sb = new System.Text.StringBuilder();
+            sb.Append(@"{" + "\"sEcho\": " + echo + ",");
+            sb.Append("\"recordsTotal\": " + filterRecords.Count + ",");
+            sb.Append("\"recordsFiltered\": " + filterRecords.Count + ",");
+            sb.Append("\"iTotalRecords\": " + filterRecords.Count + ",");
+            sb.Append("\"iTotalDisplayRecords\": " + filterRecords.Count + ",");
+            sb.Append("\"aaData\": [");
+
+            foreach (var result in pagedResults)
+            {
+                if (hasMoreRecords)
+                {
+                    sb.Append(",");
+                }
+
+                sb.Append("[");
+                // System.Text.RegularExpressions.Regex.Replace(, @"[^a-zA-Z0-9\+\-\ \.\,\:]", "")
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ID.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ARTICULO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.DESCRIPCION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.LOTE_INTERNO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.NUMPALET.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.FECHA_SSCC_CON.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.UD_ACTUAL.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.KG_ACTUAL.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ESTADO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SSCC.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OBS_ESTADO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ID_LOTE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.FECHA_CREACION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HORA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.FECHACADUCIDAD.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PH_CRUDO_AP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PH_CRUDO_DP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BRIX_CRUDO_AP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BRIX_CRUDO_DP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result._HUMEDAD.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result._ES.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HC.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SACAROSA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.GRASA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PROTEINA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.LACTOSA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TEMPERATURA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PH.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.COLOR.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SABOR.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CORTE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.FILM.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CATA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.GLUTEN.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CASEINA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.LISTERIA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SALMONELLA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PPC.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BRIX.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.IMPUREZAS.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CONSISTENCIA, @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OLOR.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.EMULSION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HR.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TS.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SNF.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ASPECTO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.DORNIC.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.INHIBIDORES.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.NC.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SILO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TTRANSP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.LAVADO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SILODEST.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.EDAD_LECHE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.T_CISTERNA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.T_MUESTRA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.INH_R.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.INH_L.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.D.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ALCOHOL.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.C_FILTRO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.INH_BOB.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.FLATOXINA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.MERMA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CONTROL_PESO_CALIDAD.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CONTROL_PESO_LINEA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CURVA_PH.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TEXTURA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ABSORVANCIA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.WEB.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CAG.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ESTADO_COMITE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HORA_ARRIBA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ESTADO_ARRIBA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OBSERVA_ARRIBA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HORA_MEDIO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ESTADO_MEDIO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OBSERVA_MEDIO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HORA_ABAJO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ESTADO_ABAJO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OBSERVA_ABAJO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OBSEVACIONES_COMITE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ID_ESTADO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SILO_DESTINO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CROMATOGRAMAS_FILM.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PROTEINA_DILUCION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.GRASA_DILUCION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TTP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TPP.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SABOR_MERENGUE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.OLOR_TORTILLA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.SABOR_TORTILLA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Espectofotometro.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_GRASA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_PROTEINA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BRIX_PASTE_2500.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BRIX_PASTE_6000.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.GLUTEN_BOLETIN.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_LISTERIA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_SALMONELLA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.PRE_BOLETIN_FQ.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_SOJA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.BOLETIN_CARAMELO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ETIQUETA_CORRECTA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CURVA_FERMENTACION.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ATP_APERTURA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CATA_COMITE.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.TEXTUROMETRO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.MUESTROTECA.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CURVA_ENFRIAMIENTO.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CURVA_FERMENTACION_.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.tp_tq_mix_crudo.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.tp_tq_mix_paste.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.tp_tq_enfr_dosif.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ph_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.col_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.olor_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.sab_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.B_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Purez.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Org_antes_envio.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ph_50.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Consistencia_20.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Sacarasa_bol.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.sal_bol.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ATP_Tq_formulacion.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ATP_tq_destino.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ATP_linea.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ph_6_67.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.olor_tort_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Sabor_tort_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.ATP_manguera.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Mohos_levad.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Presencia_ojos.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Recirculacion.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.b_tras_paste.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.bloom.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.CC_obli.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.textu_tras_tunel.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.textu_revision.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.HR_bol.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.t_frabricacion.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Enterobac.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Den.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Contrast.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Rev_Filtros.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Gras_Box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Prot_box.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V1.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V2.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.V3.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Espesor.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.Pegajosidad.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp1.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp2.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp3.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp4.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp5.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp6.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp7.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp8.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp9.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp10.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp11.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp12.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp13.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp14.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp15.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp16.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp17.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp18.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp19.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp20.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp21.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp22.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp23.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp24.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp25.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp26.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp27.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp28.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp29.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+                sb.Append("\"" + System.Text.RegularExpressions.Regex.Replace(result.caract_temp30.Replace('\r', ' ').Replace('\n', ' '), @"[^a-zA-Z0-9\+\-\ \.\,\:]", "") + "\",");
+
+                sb.Append("\"<img class='image-details' src='content/details_open.png' runat='server' height='16' width='16' alt='View Details'/>\"");
+                sb.Append("]");
+                hasMoreRecords = true;
+            }
+            sb.Append("]}");
+
+
+            return sb.ToString();
 
         }
         [WebMethod(EnableSession = true)]
@@ -4923,6 +5938,38 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
 , null as V2
 , null as V3
 ,null as Espesor
+,null as Pegajosidad
+,null as caract_temp1
+,null as caract_temp2
+,null as caract_temp3
+,null as caract_temp4
+,null as caract_temp5
+,null as caract_temp6
+,null as caract_temp7
+,null as caract_temp8
+,null as caract_temp9
+,null as caract_temp10
+,null as caract_temp11
+,null as caract_temp12
+,null as caract_temp13
+,null as caract_temp14
+,null as caract_temp15
+,null as caract_temp16
+,null as caract_temp17
+,null as caract_temp18
+,null as caract_temp19
+,null as caract_temp20
+,null as caract_temp21
+,null as caract_temp22
+,null as caract_temp23
+,null as caract_temp24
+,null as caract_temp25
+,null as caract_temp26
+,null as caract_temp27
+,null as caract_temp28
+,null as caract_temp29
+,null as caract_temp30
+
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO_BK]
 
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO_BK].ARTICULO 
@@ -5088,6 +6135,37 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
 ,V2
 ,V3
 ,Espesor
+,Pegajosidad
+, caract_temp1
+, caract_temp2
+, caract_temp3
+, caract_temp4
+, caract_temp5
+, caract_temp6
+, caract_temp7
+, caract_temp8
+, caract_temp9
+, caract_temp10
+, caract_temp11
+, caract_temp12
+, caract_temp13
+, caract_temp14
+, caract_temp15
+, caract_temp16
+, caract_temp17
+, caract_temp18
+, caract_temp19
+, caract_temp20
+, caract_temp21
+, caract_temp22
+, caract_temp23
+, caract_temp24
+, caract_temp25
+, caract_temp26
+, caract_temp27
+, caract_temp28
+, caract_temp29
+, caract_temp30
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5276,7 +6354,433 @@ FROM [QC600].[dbo].[CARACTERISTICAS_ARTICULO] inner join[QC600].[dbo].[Organolec
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
                         V3 = lin[152].ToString(),
-                        Espesor= lin[153].ToString()
+                        Espesor= lin[153].ToString(),
+                        Pegajosidad = lin[154].ToString(),
+                        caract_temp1 = lin[155].ToString(),
+                        caract_temp2 = lin[156].ToString(),
+                        caract_temp3 = lin[157].ToString(),
+                        caract_temp4 = lin[158].ToString(),
+                        caract_temp5 = lin[159].ToString(),
+                        caract_temp6 = lin[160].ToString(),
+                        caract_temp7 = lin[161].ToString(),
+                        caract_temp8 = lin[162].ToString(),
+                        caract_temp9 = lin[163].ToString(),
+                        caract_temp10 = lin[164].ToString(),
+                        caract_temp11 = lin[165].ToString(),
+                        caract_temp12 = lin[166].ToString(),
+                        caract_temp13 = lin[167].ToString(),
+                        caract_temp14 = lin[168].ToString(),
+                        caract_temp15 = lin[169].ToString(),
+                        caract_temp16 = lin[170].ToString(),
+                        caract_temp17 = lin[171].ToString(),
+                        caract_temp18 = lin[172].ToString(),
+                        caract_temp19 = lin[173].ToString(),
+                        caract_temp20 = lin[174].ToString(),
+                        caract_temp21 = lin[175].ToString(),
+                        caract_temp22 = lin[176].ToString(),
+                        caract_temp23 = lin[177].ToString(),
+                        caract_temp24 = lin[178].ToString(),
+                        caract_temp25 = lin[179].ToString(),
+                        caract_temp26 = lin[180].ToString(),
+                        caract_temp27 = lin[181].ToString(),
+                        caract_temp28 = lin[182].ToString(),
+                        caract_temp29 = lin[183].ToString(),
+                        caract_temp30 = lin[184].ToString()
+                    };
+                    lista_datos.Add(linea);
+                }
+            }
+            return lista_datos;
+        }
+        public IEnumerable<Organoleptico> Obtener_datos_sscc(string sscc)
+        {
+
+            string sql = "";
+              sql = @"SELECT  [DATOS_ORGANOLEPTICO].[ID]
+      ,[DATOS_ORGANOLEPTICO].[ARTICULO]
+	  ,[ARTICULO].[Descr Abreviada] as [DESCRIPCION]
+      ,[FECHA_SSCC_CON]
+      ,ROUND ([UD_ACTUAL],2) as [UD_ACTUAL]
+      ,ROUND ([KG_ACTUAL],2) as [KG_ACTUAL]
+      ,Estado.Estado AS ESTADO
+      ,[DATOS_ORGANOLEPTICO].[SSCC]
+      ,[LOTE_INTERNO]
+      ,[ID_LOTE]
+      ,CONVERT (VARCHAR,[FECHA_CREACION],103) AS FECHA_CREACION
+      ,CONVERT (VARCHAR,[DATOS_ORGANOLEPTICO].[HORA],108) AS [HORA]
+      ,CONVERT (VARCHAR,[FECHACADUCIDAD],103) AS FECHACADUCIDAD
+      ,[PH_CRUDO_AP]
+      ,[PH_CRUDO_DP]
+      ,[BRIX_CRUDO_AP]
+      ,[BRIX_CRUDO_DP]
+      ,[%_HUMEDAD]
+      ,[%_ES]
+      ,[HC]
+      ,[SACAROSA]
+      ,[GRASA]
+      ,[PROTEINA]
+      ,[LACTOSA]
+      ,[DATOS_ORGANOLEPTICO].[TEMPERATURA]
+      ,[DATOS_ORGANOLEPTICO].[PH]
+      ,[DATOS_ORGANOLEPTICO].[COLOR]
+      ,[DATOS_ORGANOLEPTICO].[SABOR]
+      ,[DATOS_ORGANOLEPTICO].[CORTE]
+      ,[DATOS_ORGANOLEPTICO].[FILM]
+      ,[DATOS_ORGANOLEPTICO].[CATA]
+      ,[DATOS_ORGANOLEPTICO].[GLUTEN]
+      ,[DATOS_ORGANOLEPTICO].[CASEINA]
+      ,[DATOS_ORGANOLEPTICO].[LISTERIA]
+      ,[DATOS_ORGANOLEPTICO].[SALMONELLA]
+      ,[DATOS_ORGANOLEPTICO].[PPC]
+,replace( OBS_ESTADO,'/','') as [OBS_ESTADO]
+,[BOLETIN]
+,[DATOS_ORGANOLEPTICO].[BRIX]  
+
+      ,[IMPUREZAS]
+      ,[CONSISTENCIA]
+      ,[OLOR]
+      ,[EMULSION]
+      ,[HR]
+      ,[TS]
+      ,[SNF]
+      ,[ASPECTO]
+      ,[DORNIC]
+      ,[INHIBIDORES]
+,[DATOS_ORGANOLEPTICO].[NC]
+
+,[DATOS_ORGANOLEPTICO].[SILO]
+      ,[TTRANSP]
+      ,[LAVADO]
+      ,[SILODEST]
+      ,[EDAD_LECHE]
+      ,[T_CISTERNA]
+      ,[T_MUESTRA]
+      ,[INH_R]
+      ,[INH_L]
+      ,[D]
+      ,[ALCOHOL]
+      ,[C_FILTRO]
+      ,[INH_BOB],
+[DATOS_ORGANOLEPTICO].[NUMPALET]
+      ,[FLATOXINA]
+,[MERMA]
+,[CONTROL_PESO_CALIDAD]
+,[CONTROL_PESO_LINEA]
+,[CURVA_PH]
+,[DATOS_ORGANOLEPTICO].[TEXTURA]
+,[ABSORVANCIA]
+,[WEB]
+,[CAG]
+,[ESTADO_COMITE]
+,[HORA_ARRIBA]
+      ,[ESTADO_ARRIBA]
+      ,[HORA_MEDIO]
+      ,[ESTADO_MEDIO]
+      ,[HORA_ABAJO]
+      ,[ESTADO_ABAJO]
+      ,[OBSEVACIONES_COMITE]
+,[OBSERVA_ARRIBA]
+      ,[OBSERVA_MEDIO]
+      ,[OBSERVA_ABAJO]
+,[DATOS_ORGANOLEPTICO].[ESTADO] AS ID_ESTADO
+,[SILO_DESTINO]
+      ,[CROMATOGRAMAS_FILM]
+,[PROTEINA_DILUCION]
+      ,[GRASA_DILUCION],[DATOS_ORGANOLEPTICO].TTP ,[DATOS_ORGANOLEPTICO].TPP,SABOR_MERENGUE,OLOR_TORTILLA,SABOR_TORTILLA,Espectofotometro,[BOLETIN_GRASA]
+      ,[BOLETIN_PROTEINA]
+,[BRIX_PASTE_2500]
+      ,[BRIX_PASTE_6000]
+,[GLUTEN_BOLETIN]
+ ,[BOLETIN_LISTERIA]
+      ,[BOLETIN_SALMONELLA]
+,[PRE_BOLETIN_FQ],[BOLETIN_SOJA],[BOLETIN_CARAMELO],[ETIQUETA_CORRECTA],[CURVA_FERMENTACION]
+      ,[ATP_APERTURA]
+,CATA_COMITE
+      ,TEXTUROMETRO
+,[MUESTROTECA]
+      ,[CURVA_ENFRIAMIENTO]
+      ,[CURVA_FERMENTACION_]
+,[tp_tq_mix_crudo]
+      ,[tp_tq_mix_paste]
+      ,[tp_tq_enfr_dosif]
+ ,[ph_box]
+      ,[col_box]
+      ,[olor_box]
+      ,[sab_box]
+      ,[ºB_box]
+      ,[Purez]
+      ,[Org_antes_envio]
+      ,[ph_(50%)]
+      ,[Consistencia_20º]
+      ,[Sacarasa_bol]
+      ,[(%)sal_bol]
+      ,[ATP_Tq_formulacion]
+      ,[ATP_tq_destino]
+      ,[ATP_linea]
+      ,[ph_(6.67%)]
+      ,[olor_tort_box]
+      ,[Sabor_tort_box]
+      ,[ATP_manguera]
+,[Mohos_levad]
+,[Presencia_ojos]
+,[Recirculacion]
+,[b_tras_paste]
+,bloom,CC_obli,textu_tras_tunel
+,textu_revision
+,HR_bol
+,t_frabricacion
+,Enterobac
+,Den
+,Contrast
+,Rev_Filtros
+,Gras_Box
+,Prot_box
+,V1
+,V2
+,V3
+,Espesor
+,Pegajosidad
+, caract_temp1
+, caract_temp2
+, caract_temp3
+, caract_temp4
+, caract_temp5
+, caract_temp6
+, caract_temp7
+, caract_temp8
+, caract_temp9
+, caract_temp10
+, caract_temp11
+, caract_temp12
+, caract_temp13
+, caract_temp14
+, caract_temp15
+, caract_temp16
+, caract_temp17
+, caract_temp18
+, caract_temp19
+, caract_temp20
+, caract_temp21
+, caract_temp22
+, caract_temp23
+, caract_temp24
+, caract_temp25
+, caract_temp26
+, caract_temp27
+, caract_temp28
+, caract_temp29
+, caract_temp30
+FROM         [DESPIECE PARTIDAS] INNER JOIN
+                  [DESPIECE PARTIDAS_LIN] ON [DESPIECE PARTIDAS].Año = [DESPIECE PARTIDAS_LIN].Año AND [DESPIECE PARTIDAS].Empresa = [DESPIECE PARTIDAS_LIN].Empresa AND 
+                  [DESPIECE PARTIDAS].[Nº Despiece] = [DESPIECE PARTIDAS_LIN].[Nº Despiece] INNER JOIN
+                  DATOS_ORGANOLEPTICO on DATOS_ORGANOLEPTICO.SSCC=[DESPIECE PARTIDAS_LIN].SSCC INNER JOIN
+                  ARTICULO ON ARTICULO.Artículo = DATOS_ORGANOLEPTICO.ARTICULO INNER JOIN
+                  Estado ON Estado.ID_Estado = DATOS_ORGANOLEPTICO.ESTADO INNER JOIN
+                  FAMILIA ON ARTICULO.Familia = FAMILIA.Familia WHERE  (FAMILIA.Agrupación = 9) and [DESPIECE PARTIDAS].SSCC = '" + sscc + @"'";
+                      
+           
+            Quality con = new Quality();
+            DataTable datos = con.Sql_Datatable(sql);
+            List<Organoleptico> lista_datos = new List<Organoleptico>();
+            if (datos != null)
+            {
+                foreach (DataRow lin in datos.AsEnumerable())
+                {
+
+                    Organoleptico linea = new Organoleptico
+                    {
+                        ID = lin[0].ToString(),
+                        ARTICULO = lin[1].ToString(),
+                        DESCRIPCION = lin[2].ToString(),
+                        FECHA_SSCC_CON = lin[3].ToString(),
+                        UD_ACTUAL = lin[4].ToString(),
+                        KG_ACTUAL = lin[5].ToString(),
+                        ESTADO = lin[6].ToString(),
+                        SSCC = lin[7].ToString(),
+                        LOTE_INTERNO = lin[8].ToString(),
+                        ID_LOTE = lin[9].ToString(),
+                        FECHA_CREACION = lin[10].ToString(),
+                        HORA = lin[11].ToString(),
+                        FECHACADUCIDAD = lin[12].ToString(),
+                        PH_CRUDO_AP = lin[13].ToString(),
+                        PH_CRUDO_DP = lin[14].ToString(),
+                        BRIX_CRUDO_AP = lin[15].ToString(),
+                        BRIX_CRUDO_DP = lin[16].ToString(),
+                        _HUMEDAD = lin[17].ToString(),
+                        _ES = lin[18].ToString(),
+                        HC = lin[19].ToString(),
+                        SACAROSA = lin[20].ToString(),
+                        GRASA = lin[21].ToString(),
+                        PROTEINA = lin[22].ToString(),
+                        LACTOSA = lin[23].ToString(),
+                        TEMPERATURA = lin[24].ToString(),
+                        PH = lin[25].ToString(),
+                        COLOR = lin[26].ToString(),
+                        SABOR = lin[27].ToString(),
+                        CORTE = lin[28].ToString(),
+                        FILM = lin[29].ToString(),
+                        CATA = lin[30].ToString(),
+                        GLUTEN = lin[31].ToString(),
+                        CASEINA = lin[32].ToString(),
+                        LISTERIA = lin[33].ToString(),
+                        SALMONELLA = lin[34].ToString(),
+                        PPC = lin[35].ToString(),
+                        OBS_ESTADO = lin[36].ToString(),
+                        BOLETIN = lin[37].ToString(),
+                        BRIX = lin[38].ToString(),
+                        IMPUREZAS = lin[39].ToString(),
+                        CONSISTENCIA = lin[40].ToString(),
+                        OLOR = lin[41].ToString(),
+                        EMULSION = lin[42].ToString(),
+                        HR = lin[43].ToString(),
+                        TS = lin[44].ToString(),
+                        SNF = lin[45].ToString(),
+                        ASPECTO = lin[46].ToString(),
+                        DORNIC = lin[47].ToString(),
+                        INHIBIDORES = lin[48].ToString(),
+                        NC = lin[49].ToString(),
+                        SILO = lin[50].ToString(),
+                        TTRANSP = lin[51].ToString(),
+                        LAVADO = lin[52].ToString(),
+                        SILODEST = lin[53].ToString(),
+                        EDAD_LECHE = lin[54].ToString(),
+                        T_CISTERNA = lin[55].ToString(),
+                        T_MUESTRA = lin[56].ToString(),
+                        INH_R = lin[57].ToString(),
+                        INH_L = lin[58].ToString(),
+                        D = lin[59].ToString(),
+                        ALCOHOL = lin[60].ToString(),
+                        C_FILTRO = lin[61].ToString(),
+                        INH_BOB = lin[62].ToString(),
+                        NUMPALET = lin[63].ToString(),
+                        FLATOXINA = lin[64].ToString(),
+                        MERMA = lin[65].ToString(),
+                        CONTROL_PESO_LINEA = lin[66].ToString(),
+                        CONTROL_PESO_CALIDAD = lin[67].ToString(),
+                        CURVA_PH = lin[68].ToString(),
+                        TEXTURA = lin[69].ToString(),
+                        ABSORVANCIA = lin[70].ToString(),
+                        WEB = lin[71].ToString(),
+                        CAG = lin[72].ToString(),
+
+                        ESTADO_COMITE = lin[73].ToString(),
+                        HORA_ARRIBA = lin[74].ToString(),
+                        ESTADO_ARRIBA = lin[75].ToString(),
+                        HORA_MEDIO = lin[76].ToString(),
+                        ESTADO_MEDIO = lin[77].ToString(),
+                        HORA_ABAJO = lin[78].ToString(),
+                        ESTADO_ABAJO = lin[79].ToString(),
+                        OBSEVACIONES_COMITE = lin[80].ToString(),
+                        OBSERVA_ARRIBA = lin[81].ToString(),
+                        OBSERVA_MEDIO = lin[82].ToString(),
+                        OBSERVA_ABAJO = lin[83].ToString(),
+                        ID_ESTADO = lin[84].ToString(),
+                        SILO_DESTINO = lin[85].ToString(),
+                        CROMATOGRAMAS_FILM = lin[86].ToString(),
+                        PROTEINA_DILUCION = lin[87].ToString(),
+                        GRASA_DILUCION = lin[88].ToString(),
+                        TTP = lin[89].ToString(),
+
+                        TPP = lin[90].ToString()
+                        ,
+                        SABOR_MERENGUE = lin[91].ToString()
+                        ,
+                        OLOR_TORTILLA = lin[92].ToString(),
+                        SABOR_TORTILLA = lin[93].ToString()
+                        ,
+                        Espectofotometro = lin[94].ToString(),
+                        BOLETIN_GRASA = lin[95].ToString(),
+                        BOLETIN_PROTEINA = lin[96].ToString(),
+                        BRIX_PASTE_2500 = lin[97].ToString(),
+                        BRIX_PASTE_6000 = lin[98].ToString(),
+                        GLUTEN_BOLETIN = lin[99].ToString(),
+                        BOLETIN_LISTERIA = lin[100].ToString(),
+                        BOLETIN_SALMONELLA = lin[101].ToString(),
+                        PRE_BOLETIN_FQ = lin[102].ToString(),
+                        BOLETIN_SOJA = lin[103].ToString(),
+                        BOLETIN_CARAMELO = lin[104].ToString(),
+                        ETIQUETA_CORRECTA = lin[105].ToString(),
+
+                        CURVA_FERMENTACION = lin[106].ToString(),
+
+                        ATP_APERTURA = lin[107].ToString(),
+                        CATA_COMITE = lin[108].ToString(),
+                        TEXTUROMETRO = lin[109].ToString(),
+                        MUESTROTECA = lin[110].ToString(),
+                        CURVA_ENFRIAMIENTO = lin[111].ToString(),
+                        CURVA_FERMENTACION_ = lin[112].ToString(),
+                        tp_tq_mix_crudo = lin[113].ToString(),
+                        tp_tq_mix_paste = lin[114].ToString(),
+                        tp_tq_enfr_dosif = lin[115].ToString(),
+                        ph_box = lin[116].ToString(),
+                        col_box = lin[117].ToString(),
+                        olor_box = lin[118].ToString(),
+                        sab_box = lin[119].ToString(),
+                        B_box = lin[120].ToString(),
+                        Purez = lin[121].ToString(),
+                        Org_antes_envio = lin[122].ToString(),
+                        ph_50 = lin[123].ToString(),
+                        Consistencia_20 = lin[124].ToString(),
+                        Sacarasa_bol = lin[125].ToString(),
+                        sal_bol = lin[126].ToString(),
+                        ATP_Tq_formulacion = lin[127].ToString(),
+                        ATP_tq_destino = lin[128].ToString(),
+                        ATP_linea = lin[129].ToString(),
+                        ph_6_67 = lin[130].ToString(),
+                        olor_tort_box = lin[131].ToString(),
+                        Sabor_tort_box = lin[132].ToString(),
+                        ATP_manguera = lin[133].ToString(),
+                        Mohos_levad = lin[134].ToString(),
+                        Presencia_ojos = lin[135].ToString(),
+                        Recirculacion = lin[136].ToString(),
+                        b_tras_paste = lin[137].ToString(),
+                        bloom = lin[138].ToString(),
+                        CC_obli = lin[139].ToString(),
+                        textu_tras_tunel = lin[140].ToString(),
+                        textu_revision = lin[141].ToString(),
+                        HR_bol = lin[142].ToString(),
+                        t_frabricacion = lin[143].ToString(),
+                        Enterobac = lin[144].ToString(),
+                        Den = lin[145].ToString(),
+                        Contrast = lin[146].ToString(),
+                        Rev_Filtros = lin[147].ToString(),
+                        Gras_Box = lin[148].ToString(),
+                        Prot_box = lin[149].ToString(),
+                        V1 = lin[150].ToString(),
+                        V2 = lin[151].ToString(),
+                        V3 = lin[152].ToString(),
+                        Espesor = lin[153].ToString(),
+                        Pegajosidad = lin[154].ToString(),
+                        caract_temp1 = lin[155].ToString(),
+                        caract_temp2 = lin[156].ToString(),
+                        caract_temp3 = lin[157].ToString(),
+                        caract_temp4 = lin[158].ToString(),
+                        caract_temp5 = lin[159].ToString(),
+                        caract_temp6 = lin[160].ToString(),
+                        caract_temp7 = lin[161].ToString(),
+                        caract_temp8 = lin[162].ToString(),
+                        caract_temp9 = lin[163].ToString(),
+                        caract_temp10 = lin[164].ToString(),
+                        caract_temp11 = lin[165].ToString(),
+                        caract_temp12 = lin[166].ToString(),
+                        caract_temp13 = lin[167].ToString(),
+                        caract_temp14 = lin[168].ToString(),
+                        caract_temp15 = lin[169].ToString(),
+                        caract_temp16 = lin[170].ToString(),
+                        caract_temp17 = lin[171].ToString(),
+                        caract_temp18 = lin[172].ToString(),
+                        caract_temp19 = lin[173].ToString(),
+                        caract_temp20 = lin[174].ToString(),
+                        caract_temp21 = lin[175].ToString(),
+                        caract_temp22 = lin[176].ToString(),
+                        caract_temp23 = lin[177].ToString(),
+                        caract_temp24 = lin[178].ToString(),
+                        caract_temp25 = lin[179].ToString(),
+                        caract_temp26 = lin[180].ToString(),
+                        caract_temp27 = lin[181].ToString(),
+                        caract_temp28 = lin[182].ToString(),
+                        caract_temp29 = lin[183].ToString(),
+                        caract_temp30 = lin[184].ToString()
                     };
                     lista_datos.Add(linea);
                 }
@@ -5428,6 +6932,38 @@ bloom,CC_obli,textu_tras_tunel
 ,V2
 ,V3
 ,Espesor
+, Pegajosidad
+, caract_temp1
+, caract_temp2
+, caract_temp3
+, caract_temp4
+, caract_temp5
+, caract_temp6
+, caract_temp7
+, caract_temp8
+, caract_temp9
+, caract_temp10
+, caract_temp11
+, caract_temp12
+, caract_temp13
+, caract_temp14
+, caract_temp15
+, caract_temp16
+, caract_temp17
+, caract_temp18
+, caract_temp19
+, caract_temp20
+, caract_temp21
+, caract_temp22
+, caract_temp23
+, caract_temp24
+, caract_temp25
+, caract_temp26
+, caract_temp27
+, caract_temp28
+, caract_temp29
+, caract_temp30
+
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5600,7 +7136,39 @@ inner join sscc_con on idlote=ID_LOTE
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
                         V3 = lin[152].ToString(),
-                        Espesor = lin [153].ToString()
+                        Espesor = lin [153].ToString(),
+                        Pegajosidad = lin[154].ToString(),
+                        caract_temp1 = lin[155].ToString(),
+                        caract_temp2 = lin[156].ToString(),
+                        caract_temp3 = lin[157].ToString(),
+                        caract_temp4 = lin[158].ToString(),
+                        caract_temp5 = lin[159].ToString(),
+                        caract_temp6 = lin[160].ToString(),
+                        caract_temp7 = lin[161].ToString(),
+                        caract_temp8 = lin[162].ToString(),
+                        caract_temp9 = lin[163].ToString(),
+                        caract_temp10 = lin[164].ToString(),
+                        caract_temp11 = lin[165].ToString(),
+                        caract_temp12 = lin[166].ToString(),
+                        caract_temp13 = lin[167].ToString(),
+                        caract_temp14 = lin[168].ToString(),
+                        caract_temp15 = lin[169].ToString(),
+                        caract_temp16 = lin[170].ToString(),
+                        caract_temp17 = lin[171].ToString(),
+                        caract_temp18 = lin[172].ToString(),
+                        caract_temp19 = lin[173].ToString(),
+                        caract_temp20 = lin[174].ToString(),
+                        caract_temp21 = lin[175].ToString(),
+                        caract_temp22 = lin[176].ToString(),
+                        caract_temp23 = lin[177].ToString(),
+                        caract_temp24 = lin[178].ToString(),
+                        caract_temp25 = lin[179].ToString(),
+                        caract_temp26 = lin[180].ToString(),
+                        caract_temp27 = lin[181].ToString(),
+                        caract_temp28 = lin[182].ToString(),
+                        caract_temp29 = lin[183].ToString(),
+                        caract_temp30 = lin[184].ToString()
+
                     };
                     lista_datos.Add(linea);
                 }
@@ -5753,6 +7321,37 @@ CATA_COMITE
 ,V2
 ,V3
 ,Espesor
+, Pegajosidad
+, caract_temp1
+, caract_temp2
+, caract_temp3
+, caract_temp4
+, caract_temp5
+, caract_temp6
+, caract_temp7
+, caract_temp8
+, caract_temp9
+, caract_temp10
+, caract_temp11
+, caract_temp12
+, caract_temp13
+, caract_temp14
+, caract_temp15
+, caract_temp16
+, caract_temp17
+, caract_temp18
+, caract_temp19
+, caract_temp20
+, caract_temp21
+, caract_temp22
+, caract_temp23
+, caract_temp24
+, caract_temp25
+, caract_temp26
+, caract_temp27
+, caract_temp28
+, caract_temp29
+, caract_temp30
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -5924,7 +7523,39 @@ inner join sscc_con on idlote=ID_LOTE
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
                         V3 = lin[152].ToString(),
-                        Espesor= lin[153].ToString()
+                        Espesor= lin[153].ToString(),
+                        Pegajosidad = lin[154].ToString(),
+                        caract_temp1 = lin[155].ToString(),
+                        caract_temp2 = lin[156].ToString(),
+                        caract_temp3 = lin[157].ToString(),
+                        caract_temp4 = lin[158].ToString(),
+                        caract_temp5 = lin[159].ToString(),
+                        caract_temp6 = lin[160].ToString(),
+                        caract_temp7 = lin[161].ToString(),
+                        caract_temp8 = lin[162].ToString(),
+                        caract_temp9 = lin[163].ToString(),
+                        caract_temp10 = lin[164].ToString(),
+                        caract_temp11 = lin[165].ToString(),
+                        caract_temp12 = lin[166].ToString(),
+                        caract_temp13 = lin[167].ToString(),
+                        caract_temp14 = lin[168].ToString(),
+                        caract_temp15 = lin[169].ToString(),
+                        caract_temp16 = lin[170].ToString(),
+                        caract_temp17 = lin[171].ToString(),
+                        caract_temp18 = lin[172].ToString(),
+                        caract_temp19 = lin[173].ToString(),
+                        caract_temp20 = lin[174].ToString(),
+                        caract_temp21 = lin[175].ToString(),
+                        caract_temp22 = lin[176].ToString(),
+                        caract_temp23 = lin[177].ToString(),
+                        caract_temp24 = lin[178].ToString(),
+                        caract_temp25 = lin[179].ToString(),
+                        caract_temp26 = lin[180].ToString(),
+                        caract_temp27 = lin[181].ToString(),
+                        caract_temp28 = lin[182].ToString(),
+                        caract_temp29 = lin[183].ToString(),
+                        caract_temp30 = lin[184].ToString()
+
                     };
                     lista_datos.Add(linea);
                 }
@@ -6080,6 +7711,37 @@ Den
 ,V2
 ,V3
 ,Espesor
+, Pegajosidad
+, caract_temp1
+, caract_temp2
+, caract_temp3
+, caract_temp4
+, caract_temp5
+, caract_temp6
+, caract_temp7
+, caract_temp8
+, caract_temp9
+, caract_temp10
+, caract_temp11
+, caract_temp12
+, caract_temp13
+, caract_temp14
+, caract_temp15
+, caract_temp16
+, caract_temp17
+, caract_temp18
+, caract_temp19
+, caract_temp20
+, caract_temp21
+, caract_temp22
+, caract_temp23
+, caract_temp24
+, caract_temp25
+, caract_temp26
+, caract_temp27
+, caract_temp28
+, caract_temp29
+, caract_temp30
   FROM [QC600].[dbo].[DATOS_ORGANOLEPTICO]
 inner join sscc_con on idlote=ID_LOTE
   INNER JOIN ARTICULO ON ARTICULO.Artículo=[DATOS_ORGANOLEPTICO].ARTICULO 
@@ -6252,7 +7914,39 @@ WHERE ID_LOTE=" + IdLote;
                         V1 = lin[150].ToString(),
                         V2 = lin[151].ToString(),
                         V3 = lin[152].ToString(),
-                        Espesor =lin[153].ToString()
+                        Espesor =lin[153].ToString(),
+                        Pegajosidad = lin[154].ToString(),
+                        caract_temp1 = lin[155].ToString(),
+                        caract_temp2 = lin[156].ToString(),
+                        caract_temp3 = lin[157].ToString(),
+                        caract_temp4 = lin[158].ToString(),
+                        caract_temp5 = lin[159].ToString(),
+                        caract_temp6 = lin[160].ToString(),
+                        caract_temp7 = lin[161].ToString(),
+                        caract_temp8 = lin[162].ToString(),
+                        caract_temp9 = lin[163].ToString(),
+                        caract_temp10 = lin[164].ToString(),
+                        caract_temp11 = lin[165].ToString(),
+                        caract_temp12 = lin[166].ToString(),
+                        caract_temp13 = lin[167].ToString(),
+                        caract_temp14 = lin[168].ToString(),
+                        caract_temp15 = lin[169].ToString(),
+                        caract_temp16 = lin[170].ToString(),
+                        caract_temp17 = lin[171].ToString(),
+                        caract_temp18 = lin[172].ToString(),
+                        caract_temp19 = lin[173].ToString(),
+                        caract_temp20 = lin[174].ToString(),
+                        caract_temp21 = lin[175].ToString(),
+                        caract_temp22 = lin[176].ToString(),
+                        caract_temp23 = lin[177].ToString(),
+                        caract_temp24 = lin[178].ToString(),
+                        caract_temp25 = lin[179].ToString(),
+                        caract_temp26 = lin[180].ToString(),
+                        caract_temp27 = lin[181].ToString(),
+                        caract_temp28 = lin[182].ToString(),
+                        caract_temp29 = lin[183].ToString(),
+                        caract_temp30 = lin[184].ToString()
+
 
                     };
                     lista_datos.Add(linea);
@@ -6429,6 +8123,38 @@ WHERE ID_LOTE=" + IdLote;
             public string V2 { get; set; }
             public string V3 { get; set; }
             public string Espesor { get; set; }
+            public string Pegajosidad { get; set; }
+            public string caract_temp1 { get; set; }
+            public string caract_temp2 { get; set; }
+            public string caract_temp3 { get; set; }
+            public string caract_temp4 { get; set; }
+            public string caract_temp5 { get; set; }
+            public string caract_temp6 { get; set; }
+            public string caract_temp7 { get; set; }
+            public string caract_temp8 { get; set; }
+            public string caract_temp9 { get; set; }
+            public string caract_temp10 { get; set; }
+            public string caract_temp11 { get; set; }
+            public string caract_temp12 { get; set; }
+            public string caract_temp13 { get; set; }
+            public string caract_temp14 { get; set; }
+            public string caract_temp15 { get; set; }
+            public string caract_temp16 { get; set; }
+            public string caract_temp17 { get; set; }
+            public string caract_temp18 { get; set; }
+            public string caract_temp19 { get; set; }
+            public string caract_temp20 { get; set; }
+            public string caract_temp21 { get; set; }
+            public string caract_temp22 { get; set; }
+            public string caract_temp23 { get; set; }
+            public string caract_temp24 { get; set; }
+            public string caract_temp25 { get; set; }
+            public string caract_temp26 { get; set; }
+            public string caract_temp27 { get; set; }
+            public string caract_temp28 { get; set; }
+            public string caract_temp29 { get; set; }
+            public string caract_temp30 { get; set; }
+
         }
 
         [WebMethod]

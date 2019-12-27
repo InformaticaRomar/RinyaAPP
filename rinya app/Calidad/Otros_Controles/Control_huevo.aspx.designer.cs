@@ -10,7 +10,7 @@
 namespace rinya_app.Calidad.Otros_Controles {
     
     
-    public partial class Control_Lote_Articulo {
+    public partial class Control_huevo {
         
         /// <summary>
         /// Control DropDown_Articulo.

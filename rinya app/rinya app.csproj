@@ -227,6 +227,9 @@
     <Content Include="Calidad\Maestros\WebService_Organo_Comite.asmx" />
     <Content Include="Calidad\corganoleptico.aspx" />
     <Content Include="Calidad\morganoleptico.aspx" />
+    <Content Include="Calidad\Organoleptico_busqueda.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Calidad\Organoleptico.aspx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -235,6 +238,7 @@
     <Content Include="Calidad\Otros_Controles\Contol_lote_articulo.aspx" />
     <Content Include="Calidad\Otros_Controles\Control_Calidad.aspx" />
     <Content Include="Calidad\Otros_Controles\Control_Calidad_Movil.aspx" />
+    <Content Include="Calidad\Otros_Controles\Control_huevo.aspx" />
     <Content Include="Calidad\Otros_Controles\Control_liberado.aspx" />
     <Content Include="Calidad\Otros_Controles\Control_Lote_Articulo.aspx" />
     <Content Include="Calidad\Otros_Controles\Control_Silo.aspx" />
@@ -248,6 +252,7 @@
     <Content Include="Calidad\Trazabilidad\traza.aspx" />
     <Content Include="Calidad\Trazabilidad\trazabilidad.aspx" />
     <Content Include="Calidad\Trazabilidad\WebService_traza.asmx" />
+    <Content Include="Calidad\validacion_matricula.aspx" />
     <Content Include="Calidad\WebService_calidad.asmx" />
     <Content Include="Calidad\WebService_Organoleptico.asmx" />
     <Content Include="Comercial\Motivo6_Precio0.aspx" />
@@ -1455,6 +1460,15 @@
     <Compile Include="Calidad\morganoleptico.aspx.designer.cs">
       <DependentUpon>morganoleptico.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Calidad\Organoleptico_busqueda.aspx.cs">
+      <DependentUpon>Organoleptico_busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Calidad\Organoleptico_busqueda.aspx.designer.cs">
+      <DependentUpon>Organoleptico_busqueda.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Calidad\Organoleptico.aspx.cs">
       <DependentUpon>Organoleptico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1498,6 +1512,13 @@
     </Compile>
     <Compile Include="Calidad\Otros_Controles\Control_Calidad_Movil.aspx.designer.cs">
       <DependentUpon>Control_Calidad_Movil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\Control_huevo.aspx.cs">
+      <DependentUpon>Control_huevo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calidad\Otros_Controles\Control_huevo.aspx.designer.cs">
+      <DependentUpon>Control_huevo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Calidad\Otros_Controles\Control_liberado.aspx.cs">
       <DependentUpon>Control_liberado.aspx</DependentUpon>
@@ -1583,6 +1604,13 @@
     <Compile Include="Calidad\Trazabilidad\WebService_traza.asmx.cs">
       <DependentUpon>WebService_traza.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Calidad\validacion_matricula.aspx.cs">
+      <DependentUpon>validacion_matricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calidad\validacion_matricula.aspx.designer.cs">
+      <DependentUpon>validacion_matricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Calidad\WebService_calidad.asmx.cs">
       <DependentUpon>WebService_calidad.asmx</DependentUpon>
@@ -1890,7 +1918,6 @@
     <EmbeddedResource Include="Calidad\Otros_Controles\informes\Informe_Articulo_lote.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Calidad\Otros_Controles\informes\report.rdlc" />
     <EmbeddedResource Include="Calidad\Otros_Controles\informes\Report1.rdlc" />
     <EmbeddedResource Include="Calidad\Trazabilidad\Report1.rdlc" />
     <EmbeddedResource Include="Calidad\Trazabilidad\Report2.rdlc" />
